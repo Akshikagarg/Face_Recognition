@@ -8,18 +8,18 @@ import os
 def encode():
 	
 	print("[INFO] Quantifying Faces...")
-	imagePaths = list(paths.list_images("dataset"))
+	Paths = list(paths.list_images("dataset"))
 
 	knownEncodings = []
 	knownNames = []
 
-	for (i, imagePath) in enumerate(imagePaths):
+	for (i, Path) in enumerate(Paths):
 		
 		print("[INFO] processing image {}/{}".format(i + 1,
-			len(imagePaths)))
-		name = imagePath.split(os.path.sep)[-2]
+			len(Paths)))
+		name = Path.split(os.path.sep)[-2]
 
-		image = cv2.imread(imagePath)
+		image = cv2.imread(Path)
 		rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     
  
